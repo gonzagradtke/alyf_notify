@@ -3,7 +3,7 @@ use_fxv2_oal 'yes'
 lua54        'yes'
 game         'gta5'
 
-author 'nicooo12 | discord.gg/alyfstore'
+author 'nicooo12'
 
 client_scripts {
     'client/cl_main.lua'
