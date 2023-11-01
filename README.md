@@ -3,7 +3,7 @@
   <h1 align="center">alyf_notify</h1>
 
   <p align="center">
-    Bair.es Notification
+    Bair.es Notify
   </p>
 </div>
 
