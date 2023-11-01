@@ -1,0 +1,636 @@
+@import url('../vendor/fonts/stylesheet.css');
+
+:root {
+    --main-bkg-color: rgba(0, 0, 0, 0.4);
+    --default-blur: .14vw;
+    --default-box-shadow: #000000 0px 0px 2.5px;
+    --green-color: #15DB95;
+    /*#3AFE32*/
+    --yellow-color: #FED614;
+    --blue-color: #06D2EA;
+    --red-color: #FC4445;
+    /*#F33439*/
+    --violet-color: #8860D0;
+    --purple-color: #E64398;
+
+    --progress-bar-info: #396afc;
+    --progress-bar-success: #11998e;
+    --progress-bar-warning: #f6d365;
+    --progress-bar-error: #e86462;
+    --progress-bar-inform: #396afc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* background: #000; */
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+
+    font-weight: bolder !important;
+    font-family: 'Whyte' !important;
+}
+
+.content {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.notifications-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    position: fixed;
+
+    right: 0;
+    width: 25%;
+
+    padding: 0 1vw;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.notifications-container .notification {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    width: fit-content;
+    font-size: .80vw;
+    font-family: 'Whyte';
+    font-weight: 500;
+    font-style: normal;
+    border-radius: 0 1vh 1vh 0;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+}
+
+.notifications-container .notification .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: clamp(1.0vh, 1.0vh, .5vh);
+    width: clamp(1.0vh, 1.0vh, .5vh);
+
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+
+    opacity: .5;
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot .progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot .progress-bar canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot span {
+    border-radius: 50%;
+}
+
+.notifications-container .notification .dot.info {
+    background: #396afc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.notifications-container .notification .dot.inform {
+    background: #396afc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.notifications-container .notification .dot.success {
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #11998e, #38ef7d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.notifications-container .notification .dot.error {
+    background: #e86462;
+    /* fallback for old browsers */
+    background: -webkit-radial-gradient(45deg, #c92237, #e86462);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, #c92237, #e86462);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.notifications-container .notification span {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    word-break: break-word;
+
+    color: #fff;
+
+    border-radius: .5vh .5vh .5vh .5vh;
+}
+
+.r1,
+.r2,
+.r2_5,
+.r3,
+.r4-id .r4 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.r1 {
+    align-items: center;
+
+    padding: 1vw .5vw;
+}
+
+.r2 {
+    margin-top: 1vh;
+}
+
+.r2_5 {
+    margin-top: 1vh;
+}
+
+.r3 {
+    margin-top: 1vh;
+}
+
+.r4-id {
+    margin-top: 4vh;
+}
+
+.r4 {
+    margin-top: .75vh;
+}
+
+.r5 {
+    display: flex;
+    align-items: center;
+
+    /* align right bottom */
+    justify-content: flex-end;
+    margin-top: 1vh;
+    padding: 1vw 1vw;
+
+}
+.label {
+    display: flex;
+    margin-right: .5vw;
+    padding: 0.5vh .75vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: .5vw;
+    backdrop-filter: var(--default-blur);
+}
+
+.label p {
+    font-size: .8vw;
+    font-weight: bolder;
+    color: #FFF;
+}
+
+.job {
+    display: flex;
+    padding: 0 .5vw;
+    height: 2.25vw;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.job p {
+    font-size: 1.5vw;
+
+    font-family: 'Whyte' !important;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+
+    color: #fff;
+
+}
+
+.job span {
+    font-weight: 500;
+}
+
+.circle {
+    display: flex;
+    width: 2.25vw;
+    height: 2.25vw;
+    /*width: 2.75vw;
+    height: 2.75vw;*/
+    align-items: center;
+    justify-content: center;
+    /* background: var(--main-bkg-color); */
+    border-radius: 50%;
+    /* backdrop-filter: var(--default-blur); */
+}
+
+.circle i {
+    font-size: 1.25vw;
+    color: #FFF;
+}
+
+.circle-md {
+    display: flex;
+    width: 2vw;
+    height: 2vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.circle-md i {
+    font-size: 1.1vw;
+    color: #FFF;
+}
+
+.circle-sm {
+    display: flex;
+    width: 1.5vw;
+    height: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: 50%;
+
+}
+
+.circle {
+    margin-right: .5vw;
+    border: .15vw solid;
+}
+.pulseAnim {
+    animation: soundwave 1s infinite;
+}
+
+@keyframes soundwave {
+    0% {
+        box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.75);
+    }
+
+    100% {
+        box-shadow: 0 0 0 25px rgba(255, 255, 255, 0);
+    }
+}
+.txt p:first-child {
+
+    font-size: 1.4vw;
+    font-weight: bolder;
+    line-height: 2vh;
+}
+
+.txt p:last-child {
+    font-size: 1vw;
+    font-weight: bolder;
+    font-style: italic;
+    line-height: 2vh;
+}
+
+.r4 {
+    display: flex;
+    position: fixed;
+    top: 14vw;
+    right: 1vw;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.watermark {
+    display: flex;
+    width: 100vw;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+
+    /* align item top center screen */
+    top: 0;
+
+}
+
+.watermark .container {
+    display: flex;
+    padding: .75vh 1vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.watermark .container p {
+
+    font-family: 'Whyte';
+    font-weight: 900;
+    font-style: normal;
+
+    font-size: 1vw;
+    color: #FFF;
+
+    opacity: 0.5;
+}
+
+.watermark .container span {
+    margin-left: .25vw;
+    font-weight: 300;
+}
+
+.toast {
+    max-width: 100px;
+    width: 100px;
+    position: absolute;
+    right: -2.7%;
+    top: 20%;
+}
+
+/* .wrapper {
+    height: 99%;
+    overflow: hidden;
+    position: relative;
+    max-height: 150px;
+    max-width: 35%;
+    float: right;
+} */
+
+.main {
+    margin: 12px 16px 12px 56px;
+    position: relative;
+
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.main::before {
+    font-size: 40px;
+    top: calc(50% - 12px);
+    left: -50px;
+    line-height: 24px;
+    position: absolute;
+}
+
+/* Success Notification*/
+
+.success-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f058";
+    color: #47cf73;
+}
+
+.success {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.success-border {
+    border-left: 4px solid #47cf73;
+}
+
+/* Info Notification*/
+
+.info-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f05a";
+    color: #2f83ff;
+}
+
+.info {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.info-border {
+    border-left: 4px solid #2f83ff;
+}
+
+/* Crown Notification*/
+
+.crown-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    color: #FED614;
+    font-size: 35px;
+}
+
+.crown {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.crown-border {
+    border-left: 4px solid #FED614;
+}
+
+/* Warning Notification */
+
+.warning-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f071";
+    color: #ffc107;
+}
+
+.warning {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.warning-border {
+    border-left: 4px solid #ffc107;
+}
+
+/* Error Notification */
+
+
+.error-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f06a";
+    color: #dc3545;
+}
+
+.error {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.error-border {
+    border-left: 4px solid #dc3545;
+}
+
+/* SMS Notification */
+
+.phonemessage-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f7cd";
+    color: #f38847;
+}
+
+.phonemessage {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.phonemessage-border {
+    border-left: 4px solid #f38847;
+}
+
+/* Long Text Notification */
+
+.neutral-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f11c";
+    color: #6c757d;
+}
+
+.neutral {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.neutral-border {
+    border-left: 4px solid #6c757d;
+}
+
+.serverinfo {
+    font-size: 0.8vw;
+    text-align: center;
+}
+
+#bord {
+    background-color: #fff;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 1px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.player {
+    display: flex;
+    /* position items in center */
+    align-items: center;
+    justify-content: left;
+
+    padding: .15vw 0vw .15vw 0.5vh;
+}
+
+.player .mugshot>img {
+    display: flex;
+
+    width: 100%;
+    max-width: 30px;
+    height: 30px;
+
+    border-radius: 1vw;
+
+}
+
+
+.player .player-information span {
+    padding: 0 .35vw;
+
+    font-size: .80vw;
+    font-weight: 600;
+
+    opacity: 0.8;
+
+    color: #fff;
+}
+
+.paycheck hr {
+    width: 2.5vw;
+}
+
+.paycheck .title {
+    font-size: 1.15rem;
+    margin-top: .5vh
+}
+
+.paycheck .subtitle {
+    font-size: 1rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 1vh;
+}
+
+.paycheck .reward {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paycheck .reward.mt-1 {
+    margin-top: 1vh;
+}
+
+.paycheck .reward.mt-2 {
+    margin-top: 2vh;
+}
+
+.paycheck .reward.mb-1 {
+    margin-bottom: 1vh;
+}
+
+.paycheck .reward.mb-2 {
+    margin-bottom: 2vh;
+}
+
+.paycheck .reward .text.green {
+    color: var(--green-color);
+}
+
+.paycheck .reward .text.background {
+    /* White background with text inside black rounded border and only text */
+    background-color: white;
+    border-radius: .5vh;
+    padding: 0.25vh;
+    color: #000;
+    font-size: .75rem;
+}

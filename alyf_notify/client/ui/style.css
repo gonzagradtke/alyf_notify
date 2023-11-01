@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap');
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+
+    font-weight: bolder !important;
+    font-family: 'Whyte' !important;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+:root {
+    --background-color: rgba(0, 0, 0, 0.4);
+    --background-color2: rgba(0, 0, 0, 0.6);
+    --box-shadow: rgba(0, 0, 0, 0.192);
+    --main-bkg-color: rgba(0, 0, 0, 0.4);
+
+    --default-blur: .14vw;
+    --default-box-shadow: #000000 0px 0px 2.5px;
+    --green-color: #15DB95;
+    /*#3AFE32*/
+    --yellow-color: #FED614;
+    --blue-color: #06D2EA;
+    --red-color: #FC4445;
+    /*#F33439*/
+    --violet-color: #8860D0;
+    --purple-color: #E64398;
+
+    --progress-bar-info: #396afc;
+    --progress-bar-success: #11998e;
+    --progress-bar-warning: #f6d365;
+    --progress-bar-error: #e86462;
+    --progress-bar-inform: #396afc;
+}
+
+.playerJob {
+    background: rgba(20, 20, 20, 0.336);
+    border-radius: .5vw;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    height: 40px;
+    width: auto;
+    margin-right: 5px;
+    z-index: -1;
+}
+
+.server_stats {
+    position: center;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    bottom: 230px;
+    margin-left: 10px;
+}
+
+.server_stats .box {
+    width: auto;
+    height: 100%;
+    background: var(--background-color2);
+    margin-left: 12px;
+    border-radius: 5px;
+}
+
+.playerMoney {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.playerMoney .box {
+}
+
+.speedometer {
+    position: absolute;
+    bottom: 20px;
+    left: 16%;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.basic_data {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    margin-right: 5px;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.basic_data .box {
+    width: auto;
+    height: 100%;
+    background: var(--background-color);
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--box-shadow);
+}
+
+.needs {
+    position: absolute;
+    bottom: 20px;
+    left: 16%;
+    height: 40px;
+    width: auto;
+    border-radius: 5px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.needs .box {
+    width: auto;
+    height: 100%;
+    background: var(--background-color);
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--box-shadow);
+}
+
+.speedometer .box {
+    width: auto;
+    height: 100%;
+    background: var(--background-color);
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--box-shadow);
+}
+
+.text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-style: bold;
+    white-space: nowrap;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.micro {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins';
+    font-style: bold;
+    white-space: nowrap;
+    font-weight: 500;
+    padding: 15px;
+}
+
+.serverinfo {
+    font-family: 'Poppins';
+    font-style: bold;
+    font-size: 0.8vw;
+    text-align: center;
+}
+
+
+/*  */
+
+.circle {
+    display: flex;
+    width: 2.25vw;
+    height: 2.25vw;
+    /*width: 2.75vw;
+    height: 2.75vw;*/
+    align-items: center;
+    justify-content: center;
+    /* background: var(--main-bkg-color); */
+    border-radius: 50%;
+    /* backdrop-filter: var(--default-blur); */
+}
+
+.circle i {
+    font-size: 1.25vw;
+    color: #FFF;
+}
+
+.circle-md {
+    display: flex;
+    width: 2vw;
+    height: 2vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.circle-md i {
+    font-size: 1.1vw;
+    color: #FFF;
+}
+
+.circle-sm {
+    display: flex;
+    width: 1.5vw;
+    height: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bkg-color);
+    border-radius: 50%;
+
+}
+
+.pulseAnim {
+    animation: soundwave 1s infinite;
+}
+
+.circle {
+    margin-right: .5vw;
+    border: .15vw solid;
+}
+
+.notifications-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    position: fixed;
+
+    right: 0;
+    width: 25%;
+
+    padding: 0 1vw;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.notifications-container .notification {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    width: fit-content;
+    font-size: .80vw;
+    font-family: 'Whyte';
+    font-weight: 500;
+    font-style: normal;
+    border-radius: 0 1vh 1vh 0;
+    margin-bottom: 1vw;
+    margin-left: 1vw;
+}
+
+.notifications-container .notification .dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: clamp(1.0vh, 1.0vh, .5vh);
+    width: clamp(1.0vh, 1.0vh, .5vh);
+
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+
+    opacity: .5;
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot .progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot .progress-bar canvas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.notifications-container .notification .dot span {
+    border-radius: 50%;
+}
+
+.notifications-container .notification .dot.info {
+    background: #396afc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.notifications-container .notification .dot.inform {
+    background: #396afc;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2948ff, #396afc);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.notifications-container .notification .dot.success {
+    background: #11998e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #11998e, #38ef7d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #11998e, #38ef7d);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.notifications-container .notification .dot.error {
+    background: #e86462;
+    /* fallback for old browsers */
+    background: -webkit-radial-gradient(45deg, #c92237, #e86462);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(45deg, #c92237, #e86462);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.notifications-container .notification span {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    word-break: break-word;
+
+    color: #fff;
+
+    border-radius: .5vh .5vh .5vh .5vh;
+}
+
+.toast {
+    max-width: 100px;
+    width: 100px;
+    position: absolute;
+    right: -2.7%;
+    top: 20%;
+}
+
+/* Success Notification*/
+
+.success-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f058";
+    color: #47cf73;
+}
+
+.success {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.success-border {
+    border-left: 4px solid #47cf73;
+}
+
+/* Info Notification*/
+
+.info-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f05a";
+    color: #2f83ff;
+}
+
+.info {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.info-border {
+    border-left: 4px solid #2f83ff;
+}
+
+/* Crown Notification*/
+
+.crown-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f521";
+    color: #FED614;
+    font-size: 35px;
+}
+
+.crown {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.crown-border {
+    border-left: 4px solid #FED614;
+}
+
+/* Warning Notification */
+
+.warning-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f071";
+    color: #ffc107;
+}
+
+.warning {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.warning-border {
+    border-left: 4px solid #ffc107;
+}
+
+/* Error Notification */
+
+
+.error-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f06a";
+    color: #dc3545;
+}
+
+.error {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.error-border {
+    border-left: 4px solid #dc3545;
+}
+
+/* SMS Notification */
+
+.phonemessage-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f7cd";
+    color: #f38847;
+}
+
+.phonemessage {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.phonemessage-border {
+    border-left: 4px solid #f38847;
+}
+
+/* Long Text Notification */
+
+.neutral-icon::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f11c";
+    color: #6c757d;
+}
+
+.neutral {
+    background-color: var(--main-bkg-color);
+    color: #fff;
+    padding: 5px 5px 5px 5px;
+}
+
+.neutral-border {
+    border-left: 4px solid #6c757d;
+}
